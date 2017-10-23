@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 
 const appRoutes: Routes = [
-    { path: 'user', component: UserComponent },
+    { path: 'user', component: UserListComponent },
     { path: 'user/:id', component: UserDetailComponent },
     // {
     //     path: 'heroes',
@@ -16,27 +16,29 @@ const appRoutes: Routes = [
     //     data: { title: 'Heroes List' }
     // },
     // { path: '',
-    //     redirectTo: '/heroes',
+    //     redirectTo: '/user',
+    //     data: { title: 'Heroes List' },
     //     pathMatch: 'full'
     // },
-    { path: '**', component: PageNotFoundComponent }
+    {path: '**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    UserComponent,
-    PageNotFoundComponent,
-    UserDetailComponent
-  ],
-  imports: [
-    BrowserModule,
-      RouterModule.forRoot(
-          appRoutes,
-          { enableTracing: true } // <-- debugging purposes only
-      )
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        UserListComponent,
+        PageNotFoundComponent,
+        UserDetailComponent
+    ],
+    imports: [
+        BrowserModule,
+        RouterModule.forRoot(
+            appRoutes,
+            {enableTracing: true} // <-- debugging purposes only
+        )
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -4,12 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserListComponent } from './user/user-list/user-list.component';
+// import { UserDetailComponent } from './user/user-detail/user-detail.component';
+// import { UserListComponent } from './user/user-list/user-list.component';
+import { UserModule } from './user/user.module';
 
 const appRoutes: Routes = [
-    { path: 'user', component: UserListComponent },
-    { path: 'user/:id', component: UserDetailComponent },
+    // { path: 'user', component: UserListComponent },
+    // { path: 'user/:id', component: UserDetailComponent },
     // {
     //     path: 'heroes',
     //     component: HeroListComponent,
@@ -26,12 +27,13 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
-        UserListComponent,
+        // UserListComponent,
         PageNotFoundComponent,
-        UserDetailComponent
+        // UserDetailComponent
     ],
     imports: [
         BrowserModule,
+        UserModule,
         RouterModule.forRoot(
             appRoutes,
             {enableTracing: true} // <-- debugging purposes only

@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-// import { UserDetailComponent } from './user/user-detail/user-detail.component';
-// import { UserListComponent } from './user/user-list/user-list.component';
 import { UserModule } from './user/user.module';
 
 const appRoutes: Routes = [
